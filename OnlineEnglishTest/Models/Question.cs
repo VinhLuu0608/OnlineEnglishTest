@@ -27,7 +27,11 @@ namespace OnlineEnglishTest.Models
         [Required]
         public byte Type { get; set; }
 
-                  
+
+        [Column(TypeName = "tinyint")]
+        public new byte Status { get; set; }
+
+
         public Int64 CategoryId { get; set; }
 
 

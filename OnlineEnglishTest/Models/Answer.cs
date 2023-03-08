@@ -30,6 +30,10 @@ namespace OnlineEnglishTest.Models
         public string IsCorrect { get; set; }
 
 
+        [Column(TypeName = "tinyint")]
+        public new byte Status { get; set; }
+
+
         public Int64 QuestionId { get; set; }
 
         public virtual Question Question { get; set; }

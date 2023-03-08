@@ -12,7 +12,7 @@ using OnlineEnglishTest.Data;
 namespace OnlineEnglishTest.Migrations
 {
     [DbContext(typeof(EnglishTestDbContext))]
-    [Migration("20230308071809_V1")]
+    [Migration("20230308092322_V1")]
     partial class V1
     {
         /// <inheritdoc />

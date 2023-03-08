@@ -22,6 +22,10 @@ namespace OnlineEnglishTest.Models
         public string Icon { get; set; }
 
 
+        [Column(TypeName = "tinyint")]
+        public new byte Status { get; set; }
+
+
         [Column(TypeName = "bigint")]
         [Required]
         public Int64 ParentId { get; set; }
