@@ -12,29 +12,21 @@ namespace OnlineEnglishTest.Models
 
 
         [StringLength(1000)]
-        [Required]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         [StringLength(500)]
-        [Required]
-        public string Hint { get; set; }
+        public string? Hint { get; set; }
 
 
         [StringLength(500)]
-        [Required]
-        public string Image { get; set; }
+        public string? Image { get; set; }
 
 
         [StringLength(500)]
-        [Required]
-        public string IsCorrect { get; set; }
+        public string? IsCorrect { get; set; }
 
 
-        [Column(TypeName = "tinyint")]
-        public new byte Status { get; set; }
-
-
-        public Int64 QuestionId { get; set; }
+        public Int64? QuestionId { get; set; }
 
         public virtual Question Question { get; set; }
 

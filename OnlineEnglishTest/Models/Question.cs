@@ -12,24 +12,18 @@ namespace OnlineEnglishTest.Models
         public string Name { get; set; }
 
         [StringLength(1000)]
-        [Required]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         [StringLength(500)]
-        [Required]
-        public string Image { get; set; }
+        public string? Image { get; set; }
 
         [Column(TypeName = "tinyint")]
-        [Required]
-        public byte Level { get; set; }
+        public byte? Level { get; set; }
 
         [Column(TypeName = "tinyint")]
-        [Required]
-        public byte Type { get; set; }
+        public byte? Type { get; set; }
 
 
-        [Column(TypeName = "tinyint")]
-        public new byte Status { get; set; }
 
 
         public Int64 CategoryId { get; set; }

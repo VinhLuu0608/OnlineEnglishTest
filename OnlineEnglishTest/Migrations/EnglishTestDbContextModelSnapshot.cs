@@ -28,22 +28,20 @@ namespace OnlineEnglishTest.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime");
 
                     b.Property<string>("ModifieldBy")
-                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<DateTime>("ModifieldDate")
+                    b.Property<DateTime?>("ModifieldDate")
                         .HasColumnType("datetime");
 
-                    b.Property<byte>("Status")
+                    b.Property<byte?>("Status")
                         .HasColumnType("tinyint");
 
                     b.HasKey("ID");
@@ -58,22 +56,18 @@ namespace OnlineEnglishTest.Migrations
                     b.HasBaseType("OnlineEnglishTest.Models.BaseEntity");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
                     b.Property<string>("Hint")
-                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("IsCorrect")
-                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
@@ -82,7 +76,8 @@ namespace OnlineEnglishTest.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<long>("QuestionId")
+                    b.Property<long?>("QuestionId")
+                        .IsRequired()
                         .HasColumnType("bigint");
 
                     b.HasIndex("QuestionId");
@@ -95,12 +90,10 @@ namespace OnlineEnglishTest.Migrations
                     b.HasBaseType("OnlineEnglishTest.Models.BaseEntity");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
                     b.Property<string>("Icon")
-                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
@@ -109,7 +102,7 @@ namespace OnlineEnglishTest.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<long>("ParentId")
+                    b.Property<long?>("ParentId")
                         .HasColumnType("bigint");
 
                     b.ToTable("Categories", (string)null);
@@ -123,16 +116,14 @@ namespace OnlineEnglishTest.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<byte>("Level")
+                    b.Property<byte?>("Level")
                         .HasColumnType("tinyint");
 
                     b.Property<string>("Name")
@@ -140,7 +131,7 @@ namespace OnlineEnglishTest.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<byte>("Type")
+                    b.Property<byte?>("Type")
                         .HasColumnType("tinyint");
 
                     b.HasIndex("CategoryId");

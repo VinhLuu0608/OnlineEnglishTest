@@ -13,22 +13,16 @@ namespace OnlineEnglishTest.Models
 
 
         [StringLength(1000)]
-        [Required]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
 
         [StringLength(500)]
-        [Required]
-        public string Icon { get; set; }
+        public string? Icon { get; set; }
 
-
-        [Column(TypeName = "tinyint")]
-        public new byte Status { get; set; }
 
 
         [Column(TypeName = "bigint")]
-        [Required]
-        public Int64 ParentId { get; set; }
+        public Int64? ParentId { get; set; }
 
 
         public virtual List<Question> questions { get; set; }

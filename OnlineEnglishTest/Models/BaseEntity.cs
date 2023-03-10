@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 
 namespace OnlineEnglishTest.Models
@@ -13,22 +14,26 @@ namespace OnlineEnglishTest.Models
         public Int64 ID { get; set; }
 
         [Column(TypeName = "tinyint")]
-        public byte Status { get; set; }
+        [AllowNull]
+        public byte? Status { get; set; }
 
 
         [StringLength(500)]
-        public string CreatedBy { get; set; }
+        [AllowNull]
+        public string? CreatedBy { get; set; }
 
 
         [Column(TypeName="datetime")]
-        public DateTime CreatedDate { get; set; }
+        [AllowNull]
+        public DateTime? CreatedDate { get; set; }
 
 
         [StringLength(500)]
+        [AllowNull]
 
-        public string ModifieldBy { get; set; }
+        public string? ModifieldBy { get; set; }
 
         [Column(TypeName = "datetime")]
-        public DateTime ModifieldDate { get; set; }
+        public DateTime? ModifieldDate { get; set; }
     }
 }

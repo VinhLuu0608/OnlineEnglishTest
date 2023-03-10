@@ -1,40 +1,213 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container mt-5">
-    <div class="d-flex justify-content-center row">
-        <div class="col-md-10 col-lg-10">
-            <div class="border">
-                <div class="question bg-white p-3 border-bottom">
-                    <div class="d-flex flex-row justify-content-between align-items-center mcq">
-                        <h4>MCQ Quiz</h4><span>(5 of 20)</span>
+<section class="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-12">
+                <div class="features-post">
+                    <div class="features-content">
+                        <div class="content-show">
+                            <h4><i class="fa fa-pencil"></i>All Courses</h4>
+                        </div>
+                        <div class="content-hide">
+                            <p>This is the place where you can doing test after you study </p>
+                            <p class="hidden-sm">Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet.</p>
+                            <div class="scroll-to-section"><a href="#section2">More Info.</a></div>
+                        </div>
                     </div>
                 </div>
-                <div class="question bg-white p-3 border-bottom">
-                    <div class="d-flex flex-row align-items-center question-title">
-                        <h3 class="text-danger">Q.</h3>
-                        <h5 class="mt-1 ml-2">Which of the following country has largest population?</h5>
-                    </div><div class="ans ml-2">
-                        <label class="radio">
-                            <input type="radio" name="brazil" value="brazil"> <span>Brazil</span>
-                        </label>
-                    </div><div class="ans ml-2">
-                        <label class="radio">
-                            <input type="radio" name="Germany" value="Germany"> <span>Germany</span>
-                        </label>
-                    </div><div class="ans ml-2">
-                        <label class="radio">
-                            <input type="radio" name="Indonesia" value="Indonesia"> <span>Indonesia</span>
-                        </label>
-                    </div><div class="ans ml-2">
-                        <label class="radio">
-                            <input type="radio" name="Russia" value="Russia"> <span>Russia</span>
-                        </label>
+            </div>
+            <div class="col-lg-4 col-12">
+                <div class="features-post second-features">
+                    <div class="features-content">
+                        <div class="content-show">
+                            <h4><i class="fa fa-graduation-cap"></i>Examination</h4>
+                        </div>
+                        <div class="content-hide">
+                            <p>Doing test with level from Primary to University</p>
+                            <p class="hidden-sm">Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet.</p>
+                            <div class="scroll-to-section"><a href="#section3">Details</a></div>
+                        </div>
                     </div>
                 </div>
-                <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white"><button class="btn btn-primary d-flex align-items-center btn-danger" type="button"><i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;previous</button><button class="btn btn-primary border-success align-items-center btn-success" type="button">Next<i class="fa fa-angle-right ml-2"></i></button></div>
+            </div>
+            <div class="col-lg-4 col-12">
+                <div class="features-post third-features">
+                    <div class="features-content">
+                        <div class="content-show">
+                            <h4><i class="fa fa-book"></i>Real Test</h4>
+                        </div>
+                        <div class="content-hide">
+                            <p>Doing test with ramdom question</p>
+                            <p class="hidden-sm">Curabitur id eros vehicula, tincidunt libero eu, lobortis mi. In mollis eros a posuere imperdiet.</p>
+                            <div class="scroll-to-section"><a href="#section4">Read More</a></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+
+
+<section class="section courses" data-section="section4">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>Choose Your Course</h2>
+                </div>
+            </div>
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <img src="~/assets/images/courses-01.jpg" alt="Course #1">
+                    <div class="down-content">
+                        <h4>Digital Marketing</h4>
+                        <p>You can get free images and videos for your websites by visiting Unsplash, Pixabay, and Pexels.</p>
+                        <div class="author-image">
+                            <img src="~/assets/images/author-01.png" alt="Author 1">
+                        </div>
+                        <div class="text-button-pay">
+                            <a href="#">Pay <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/assets/images/courses-02.jpg" alt="Course #2">
+                    <div class="down-content">
+                        <h4>Business World</h4>
+                        <p>Quisque cursus augue ut velit dictum, quis volutpat enim blandit. Maecenas a lectus ac ipsum porta.</p>
+                        <div class="author-image">
+                            <img src="~/assets/images/author-02.png" alt="Author 2">
+                        </div>
+                        <div class="text-button-free">
+                            <a href="#">Free <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/assets/images/courses-03.jpg" alt="Course #3">
+                    <div class="down-content">
+                        <h4>Media Technology</h4>
+                        <p>Pellentesque ultricies diam magna, auctor cursus lectus pretium nec. Maecenas finibus lobortis enim.</p>
+                        <div class="author-image">
+                            <img src="~/assets/images/author-03.png" alt="Author 3">
+                        </div>
+                        <div class="text-button-pay">
+                            <a href="#">Pay <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/assets/images/courses-04.jpg" alt="Course #4">
+                    <div class="down-content">
+                        <h4>Communications</h4>
+                        <p>Download free images and videos for your websites by visiting Unsplash, Pixabay, and Pexels.</p>
+                        <div class="author-image">
+                            <img src="~/assets/images/author-04.png" alt="Author 4">
+                        </div>
+                        <div class="text-button-free">
+                            <a href="#">Free <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/assets/images/courses-05.jpg" alt="">
+                    <div class="down-content">
+                        <h4>Business Ethics</h4>
+                        <p>Pellentesque ultricies diam magna, auctor cursus lectus pretium nec. Maecenas finibus lobortis enim.</p>
+                        <div class="author-image">
+                            <img src="~/assets/images/author-05.png" alt="">
+                        </div>
+                        <div class="text-button-pay">
+                            <a href="#">Pay <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/assets/images/courses-01.jpg" alt="">
+                    <div class="down-content">
+                        <h4>Photography</h4>
+                        <p>Quisque cursus augue ut velit dictum, quis volutpat enim blandit. Maecenas a lectus ac ipsum porta.</p>
+                        <div class="author-image">
+                            <img src="~/assets/images/author-01.png" alt="">
+                        </div>
+                        <div class="text-button-free">
+                            <a href="#">Free <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/assets/images/courses-02.jpg" alt="">
+                    <div class="down-content">
+                        <h4>Web Development</h4>
+                        <p>Pellentesque ultricies diam magna, auctor cursus lectus pretium nec. Maecenas finibus lobortis enim.</p>
+                        <div class="author-image">
+                            <img src="~/assets/images/author-02.png" alt="">
+                        </div>
+                        <div class="text-button-free">
+                            <a href="#">Free <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/assets/images/courses-03.jpg" alt="">
+                    <div class="down-content">
+                        <h4>Learn HTML CSS</h4>
+                        <p>You can get free images and videos for your websites by visiting Unsplash, Pixabay, and Pexels.</p>
+                        <div class="author-image">
+                            <img src="~/assets/images/author-03.png" alt="">
+                        </div>
+                        <div class="text-button-pay">
+                            <a href="#">Pay <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/assets/images/courses-04.jpg" alt="">
+                    <div class="down-content">
+                        <h4>Social Media</h4>
+                        <p>Pellentesque ultricies diam magna, auctor cursus lectus pretium nec. Maecenas finibus lobortis enim.</p>
+                        <div class="author-image">
+                            <img src="~/assets/images/author-04.png" alt="">
+                        </div>
+                        <div class="text-button-pay">
+                            <a href="#">Pay <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/assets/images/courses-05.jpg" alt="">
+                    <div class="down-content">
+                        <h4>Digital Arts</h4>
+                        <p>Quisque cursus augue ut velit dictum, quis volutpat enim blandit. Maecenas a lectus ac ipsum porta.</p>
+                        <div class="author-image">
+                            <img src="~/assets/images/author-05.png" alt="">
+                        </div>
+                        <div class="text-button-free">
+                            <a href="#">Free <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/assets/images/courses-01.jpg" alt="">
+                    <div class="down-content">
+                        <h4>Media Streaming</h4>
+                        <p>Pellentesque ultricies diam magna, auctor cursus lectus pretium nec. Maecenas finibus lobortis enim.</p>
+                        <div class="author-image">
+                            <img src="~/assets/images/author-01.png" alt="">
+                        </div>
+                        <div class="text-button-pay">
+                            <a href="#">Pay <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
