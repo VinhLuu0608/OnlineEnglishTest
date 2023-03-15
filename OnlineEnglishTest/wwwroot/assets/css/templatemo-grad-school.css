@@ -69,8 +69,8 @@ p {
 /* Buttons */
 
 .main-button a {
-    background-color: #f5a425;
-    color: #fff;
+    background-color: #58f525;
+    color: #007bffc9;
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -185,10 +185,10 @@ a.menu-link { display: none; }
     font-weight: 800;
     color: #fff;
 }
-.main-header .logo a em {
-    font-style: normal;
-    color: #f5a425;
-}
+    .main-header .logo a em {
+        font-style: normal;
+        color: #58f525;
+    }
 
 .main-menu {
     float: right;
@@ -346,11 +346,11 @@ a.menu-link { display: none; }
   letter-spacing: 1px;
 }
 
-.main-banner .caption h2 em {
-  font-style: normal;
-  color: #f5a425;
-  font-weight: 900;
-}
+    .main-banner .caption h2 em {
+        font-style: normal;
+        color: #58f525;
+        font-weight: 900;
+    }
 
 @media screen and (max-width: 1180px) {
 
@@ -874,9 +874,9 @@ section.courses .owl-carousel button.owl-dot {
     margin: 50px 10px 0px 10px;
     outline: none;
 }
-section.courses .owl-carousel button.active {
-    background-color: #f5a425;
-}
+    section.courses .owl-carousel button.active {
+        background-color: #58f525;
+    }
 
 
 

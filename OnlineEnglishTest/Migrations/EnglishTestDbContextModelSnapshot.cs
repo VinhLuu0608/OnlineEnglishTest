@@ -17,59 +17,53 @@ namespace OnlineEnglishTest.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.0")
+                .HasAnnotation("ProductVersion", "7.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("OnlineEnglishTest.Models.BaseEntity", b =>
-                {
-                    b.Property<long>("ID")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("CreatedBy")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime");
-
-                    b.Property<string>("ModifieldBy")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<DateTime?>("ModifieldDate")
-                        .HasColumnType("datetime");
-
-                    b.Property<byte?>("Status")
-                        .HasColumnType("tinyint");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("BaseEntities", (string)null);
-
-                    b.UseTptMappingStrategy();
-                });
-
             modelBuilder.Entity("OnlineEnglishTest.Models.Answer", b =>
                 {
-                    b.HasBaseType("OnlineEnglishTest.Models.BaseEntity");
+                    b.Property<long>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime");
 
                     b.Property<string>("Description")
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
                     b.Property<string>("Hint")
+                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("Image")
+                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("IsCorrect")
+                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("ModifieldBy")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("ModifieldDate")
+                        .HasColumnType("datetime");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -80,6 +74,11 @@ namespace OnlineEnglishTest.Migrations
                         .IsRequired()
                         .HasColumnType("bigint");
 
+                    b.Property<byte>("Status")
+                        .HasColumnType("tinyint");
+
+                    b.HasKey("ID");
+
                     b.HasIndex("QuestionId");
 
                     b.ToTable("Answers", (string)null);
@@ -87,52 +86,107 @@ namespace OnlineEnglishTest.Migrations
 
             modelBuilder.Entity("OnlineEnglishTest.Models.Category", b =>
                 {
-                    b.HasBaseType("OnlineEnglishTest.Models.BaseEntity");
+                    b.Property<long>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime");
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
                     b.Property<string>("Icon")
+                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("ModifieldBy")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("ModifieldDate")
+                        .HasColumnType("datetime");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<long?>("ParentId")
+                    b.Property<long>("ParentId")
                         .HasColumnType("bigint");
+
+                    b.Property<byte>("Status")
+                        .HasColumnType("tinyint");
+
+                    b.HasKey("ID");
 
                     b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("OnlineEnglishTest.Models.Question", b =>
                 {
-                    b.HasBaseType("OnlineEnglishTest.Models.BaseEntity");
+                    b.Property<long>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
 
                     b.Property<long>("CategoryId")
                         .HasColumnType("bigint");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime");
 
                     b.Property<string>("Description")
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
                     b.Property<string>("Image")
+                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
                     b.Property<byte?>("Level")
+                        .IsRequired()
                         .HasColumnType("tinyint");
+
+                    b.Property<string>("ModifieldBy")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("ModifieldDate")
+                        .HasColumnType("datetime");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<byte?>("Type")
+                    b.Property<byte>("Status")
                         .HasColumnType("tinyint");
+
+                    b.Property<byte?>("Type")
+                        .IsRequired()
+                        .HasColumnType("tinyint");
+
+                    b.HasKey("ID");
 
                     b.HasIndex("CategoryId");
 
@@ -141,12 +195,6 @@ namespace OnlineEnglishTest.Migrations
 
             modelBuilder.Entity("OnlineEnglishTest.Models.Answer", b =>
                 {
-                    b.HasOne("OnlineEnglishTest.Models.BaseEntity", null)
-                        .WithOne()
-                        .HasForeignKey("OnlineEnglishTest.Models.Answer", "ID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("OnlineEnglishTest.Models.Question", "Question")
                         .WithMany("Answers")
                         .HasForeignKey("QuestionId")
@@ -157,15 +205,6 @@ namespace OnlineEnglishTest.Migrations
                     b.Navigation("Question");
                 });
 
-            modelBuilder.Entity("OnlineEnglishTest.Models.Category", b =>
-                {
-                    b.HasOne("OnlineEnglishTest.Models.BaseEntity", null)
-                        .WithOne()
-                        .HasForeignKey("OnlineEnglishTest.Models.Category", "ID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("OnlineEnglishTest.Models.Question", b =>
                 {
                     b.HasOne("OnlineEnglishTest.Models.Category", "Category")
@@ -174,12 +213,6 @@ namespace OnlineEnglishTest.Migrations
                         .OnDelete(DeleteBehavior.ClientNoAction)
                         .IsRequired()
                         .HasConstraintName("FK_Questions_Categories_CateID");
-
-                    b.HasOne("OnlineEnglishTest.Models.BaseEntity", null)
-                        .WithOne()
-                        .HasForeignKey("OnlineEnglishTest.Models.Question", "ID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
 
                     b.Navigation("Category");
                 });

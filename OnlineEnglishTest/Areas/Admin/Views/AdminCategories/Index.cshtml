@@ -1,0 +1,125 @@
+﻿@model IEnumerable<OnlineEnglishTest.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> Categories</h4>
+                </div> 
+                <div class="col-md-6">
+                        <div class="input-affix m-v-10">
+                            <a class="btn btn-primary" asp-area="Admin" asp-controller="AdminCategories" asp-action="Create"><i class="anticon anticon-plus-circle m-r-5"></i><span>Create new Category</span></a>
+                        </div>
+                    </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="category" class="table">
+                            <thead class=" text-primary">
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Desciption
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                            <th>
+                                Created by
+                            </th>
+                             <th>
+                                Created date
+                            </th>
+                             <th>
+                                Modified by
+                            </th>
+                            <th>
+                                Modified date
+                            </th>
+
+                            </thead>
+                            <tbody>
+
+                                @foreach(var item in Model)
+                                {
+                                    <tr>
+                                        <td>   
+                                            @item.Name
+                                       </td>
+                                        <td>
+                                            @item.Description
+                                        </td>
+                                        <td>
+                                         @if(item.Status == 0)
+                                            {
+                                                <div>Block</div>
+                                            }
+                                            else if(item.Status == 1)
+                                            {
+                                                <div>Active</div>
+                                            }
+                                            else
+                                            {
+                                                <div>Deleted</div>
+                                            }
+                                        </td>
+                                        <td>
+                                            @item.CreatedBy
+                                        </td>
+                                       <td>
+                                            @item.CreatedDate.ToString("dd MMM yyyy")
+                                        </td>
+                                        <td>
+                                            @item.ModifieldBy
+                                        </td>
+                                        <td >
+                                            @item.ModifieldDate.ToString("dd MMM yyyy")
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-primary btn-tone m-r-5" asp-area="Admin" asp-controller="AdminCategories" asp-action="Details" asp-route-id="@item.ID">Detail</a>
+                                            <a class="btn btn-secondary btn-tone m-r-5" asp-area="Admin" asp-controller="AdminCategories" asp-action="Edit" asp-route-id="@item.ID">Update</a>
+                                            <a class="btn btn-success btn-tone m-r-5" asp-area="Admin" asp-controller="AdminCategories" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                                        </td>
+                                        
+                                    </tr>
+                                }
+ 
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function (){
+        $("#category").DataTable(
+            {
+            "ajax": {
+                "url": "/Admin/AdminCategories/GetCategory",
+                "type": "GET",
+                "dataType": "json"
+            },
+            "columns":[
+                { "data:Name"},
+                { "data:Description"},
+                { "data:Status"},
+                { "data:CreatedBy"},
+                { "data:CreatedDate"},
+                { "data:ModifieldBy"},
+                { "data:ModifieldDate"}
+
+            ]
+        });
+    })
+</script>
+

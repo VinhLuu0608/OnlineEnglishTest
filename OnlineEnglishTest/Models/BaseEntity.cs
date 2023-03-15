@@ -9,31 +9,12 @@ namespace OnlineEnglishTest.Models
     [Table("BaseEntity")]
     public abstract class BaseEntity
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+
         public Int64 ID { get; set; }
-
-        [Column(TypeName = "tinyint")]
-        [AllowNull]
-        public byte? Status { get; set; }
-
-
-        [StringLength(500)]
-        [AllowNull]
-        public string? CreatedBy { get; set; }
-
-
-        [Column(TypeName="datetime")]
-        [AllowNull]
-        public DateTime? CreatedDate { get; set; }
-
-
-        [StringLength(500)]
-        [AllowNull]
-
-        public string? ModifieldBy { get; set; }
-
-        [Column(TypeName = "datetime")]
-        public DateTime? ModifieldDate { get; set; }
+        public byte Status { get; set; }
+        public string CreatedBy { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
+        public string ModifieldBy { get; set; }
+        public DateTime ModifieldDate { get; set; } = DateTime.Now;
     }
 }
